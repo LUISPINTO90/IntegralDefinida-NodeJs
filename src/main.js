@@ -1,5 +1,6 @@
 import Menu from "./menu.js";
 import Keyboard from "./keyboard.js";
+import integral, { integracionDefinida } from "./integral.cjs";
 
 let options = ["Calcular Integral Definida", "Salir"];
 
@@ -32,31 +33,26 @@ class ToDoListApp {
     console.log(`\n\n====[ Integral Definida ]====\n`);
 
     let functionFX = Keyboard.readString("Escribe la funcion F(x): ");
-    let upperLimit = Keyboard.readString("Escribe el limite Superior: ");
-    let lowerLimit = Keyboard.readString("Escribe el limite Inferior: ");
+    let upperLimit = Keyboard.readNumber("Escribe el limite Superior: ");
+    let lowerLimit = Keyboard.readNumber("Escribe el limite Inferior: ");
 
     if (functionFX == "" || upperLimit == "" || lowerLimit == "") {
       console.log("\n[ERROR] Todos los campos son requeridos");
       Keyboard.readString("Presiona ENTER para continuar...");
     } else {
-    }
-
-    /* if (title == "" || deadline == "") {
-      console.log("\n[ERROR] Todos los campos son requeridos");
-      Keyboard.readString("Presiona ENTER para continuar...");
-    } else {
-      let item = new Item(title, deadline);
-      this._toDoList.push(item);
+      let integralDefSimbolica = integracionDefinida(
+        functionFX,
+        upperLimit,
+        lowerLimit
+      );
+      let integralDefEvaluada = eval(integralDefSimbolica);
 
       console.log(
-        `\nSe agrego una tarea. Hay ${this._toDoList.length} tareas registradas`
+        `\nLa integral definida de ${functionFX} =\n${integralDefSimbolica}\n\n= ${integralDefEvaluada}` //x^3-x^2+x^4
       );
-
-      Keyboard.readString("Presiona ENTER para continuar...");
-    }*/
+      Keyboard.readString("\nPresiona ENTER para continuar...");
+    }
   }
-
-  
 }
 
 let app = new ToDoListApp();
