@@ -4,7 +4,7 @@ import integral, { integracionDefinida } from "./integral.cjs";
 
 let options = ["Calcular Integral Definida", "Salir"];
 
-class ToDoListApp {
+class Integral {
   constructor() {}
 
   run() {
@@ -55,5 +55,5 @@ class ToDoListApp {
   }
 }
 
-let app = new ToDoListApp();
+let app = new Integral();
 app.run();
