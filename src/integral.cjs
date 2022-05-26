@@ -63,6 +63,3 @@ function integracionDefinida(funcion, upperLimit, lowerLimit) {
 module.exports = {
   integracionDefinida,
 };
-
-let string = "Math.cos cos cos";
-console.log(replaceCos(string));

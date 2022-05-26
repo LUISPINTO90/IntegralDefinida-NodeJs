@@ -33,10 +33,10 @@ class Integral {
     console.log(`\n\n====[ Integral Definida ]====\n`);
 
     let functionFX = Keyboard.readString("Escribe la funcion F(x): ");
-    let upperLimit = Keyboard.readNumber("Escribe el limite Superior: ");
-    let lowerLimit = Keyboard.readNumber("Escribe el limite Inferior: ");
+    let upperLimit = Keyboard.readString("Escribe el limite Superior: ");
+    let lowerLimit = Keyboard.readString("Escribe el limite Inferior: ");
 
-    if (functionFX == "" || upperLimit == "" || lowerLimit == "") {
+    if (functionFX === "" || upperLimit === "" || lowerLimit === "") {
       console.log("\n[ERROR] Todos los campos son requeridos");
       Keyboard.readString("Presiona ENTER para continuar...");
     } else {
